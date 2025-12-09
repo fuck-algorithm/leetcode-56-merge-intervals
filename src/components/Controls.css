@@ -1,0 +1,137 @@
+.controls-container {
+  padding: 10px 15px;
+  background-color: #2a2a2a;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.control-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.control-button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 12px;
+  background-color: #3a3a3a;
+  color: #e0e0e0;
+  border: 2px solid #4a4a4a;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  min-width: 110px;
+  justify-content: center;
+}
+
+.control-button:hover:not(:disabled) {
+  background-color: #4a4a4a;
+  border-color: #6a6a6a;
+  transform: translateY(-2px);
+}
+
+.control-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.control-button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.control-button.reset-button {
+  border-color: #f44336;
+}
+
+.control-button.reset-button:hover:not(:disabled) {
+  border-color: #ff5744;
+  background-color: #4a3a3a;
+}
+
+.control-button.play-button {
+  border-color: #66bb6a;
+  min-width: 150px;
+}
+
+.control-button.play-button:hover:not(:disabled) {
+  border-color: #77cc7a;
+  background-color: #3a4a3a;
+}
+
+.button-icon {
+  font-size: 16px;
+}
+
+.button-text {
+  font-size: 13px;
+}
+
+.button-shortcut {
+  font-size: 11px;
+  color: #909090;
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding: 0 5px;
+}
+
+.info-item {
+  font-size: 13px;
+  color: #b0b0b0;
+  font-weight: 500;
+}
+
+.progress-bar {
+  height: 4px;
+  background-color: #3a3a3a;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #7a7aff 0%, #66bb6a 100%);
+  transition: width 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .controls-container {
+    padding: 20px;
+  }
+
+  .control-buttons {
+    gap: 10px;
+  }
+
+  .control-button {
+    min-width: 120px;
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+
+  .button-text {
+    font-size: 14px;
+  }
+
+  .button-shortcut {
+    display: none;
+  }
+
+  .progress-info {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+}

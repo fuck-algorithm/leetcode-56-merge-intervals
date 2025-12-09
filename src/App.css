@@ -1,0 +1,335 @@
+.App {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+  overflow: hidden;
+}
+
+.main-content {
+  flex: 1;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 0;
+  width: 100%;
+}
+
+.title {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #7a7aff;
+  text-shadow: 0 2px 4px rgba(122, 122, 255, 0.3);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.title-link {
+  color: #7a7aff;
+  text-decoration: none;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.title-link:hover {
+  color: #9a9aff;
+  transform: translateY(-1px);
+}
+
+.problem-number {
+  background: linear-gradient(135deg, #7a7aff 0%, #9a9aff 100%);
+  color: #1a1a1a;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  box-shadow: 0 2px 6px rgba(122, 122, 255, 0.3);
+}
+
+.title-badges {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* Difficulty Badge */
+.difficulty-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 2px solid;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  animation: badge-appear 0.5s ease;
+}
+
+@keyframes badge-appear {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.difficulty-badge.easy {
+  background: linear-gradient(135deg, #4caf50 0%, #66bb6a 100%);
+  color: #1a1a1a;
+  border-color: #81c784;
+  box-shadow: 0 2px 8px rgba(76, 175, 80, 0.4);
+}
+
+.difficulty-badge.medium {
+  background: linear-gradient(135deg, #ff9800 0%, #ffa726 100%);
+  color: #1a1a1a;
+  border-color: #ffb74d;
+  box-shadow: 0 2px 8px rgba(255, 152, 0, 0.4);
+}
+
+.difficulty-badge.hard {
+  background: linear-gradient(135deg, #f44336 0%, #ef5350 100%);
+  color: #ffffff;
+  border-color: #e57373;
+  box-shadow: 0 2px 8px rgba(244, 67, 54, 0.4);
+}
+
+/* Topic Tags */
+.topic-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  background-color: #3a3a3a;
+  color: #b0b0b0;
+  border: 1px solid #4a4a4a;
+  transition: all 0.2s;
+}
+
+.topic-tag:hover {
+  background-color: #4a4a4a;
+  color: #d0d0d0;
+  border-color: #5a5a5a;
+  transform: translateY(-1px);
+}
+
+.control-panel {
+  background-color: #2a2a2a;
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  flex-shrink: 0;
+}
+
+.input-section {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+  padding: 10px 15px;
+  background-color: #2a2a2a;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.interval-input {
+  flex: 1;
+  min-width: 300px;
+  padding: 8px 12px;
+  background-color: #3a3a3a;
+  border: 2px solid #4a4a4a;
+  border-radius: 6px;
+  color: #e0e0e0;
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+
+.interval-input:focus {
+  outline: none;
+  border-color: #7a7aff;
+}
+
+.interval-input::placeholder {
+  color: #808080;
+}
+
+.apply-button {
+  padding: 8px 20px;
+  background-color: #7a7aff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.apply-button:hover {
+  background-color: #9a9aff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(122, 122, 255, 0.3);
+}
+
+.apply-button:active {
+  transform: translateY(0);
+}
+
+.controls-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.speed-control {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.speed-control label {
+  font-size: 15px;
+  color: #b0b0b0;
+  min-width: 100px;
+}
+
+.speed-control input[type="range"] {
+  flex: 1;
+  max-width: 300px;
+  height: 6px;
+  background: #3a3a3a;
+  border-radius: 3px;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.speed-control input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  background: #7a7aff;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: all 0.2s;
+}
+
+.speed-control input[type="range"]::-webkit-slider-thumb:hover {
+  background: #9a9aff;
+  transform: scale(1.1);
+}
+
+.speed-control input[type="range"]::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  background: #7a7aff;
+  cursor: pointer;
+  border-radius: 50%;
+  border: none;
+  transition: all 0.2s;
+}
+
+.speed-control input[type="range"]::-moz-range-thumb:hover {
+  background: #9a9aff;
+  transform: scale(1.1);
+}
+
+.example-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.example-buttons button {
+  padding: 6px 12px;
+  background-color: #3a3a3a;
+  color: #e0e0e0;
+  border: 2px solid #4a4a4a;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.example-buttons button:hover {
+  background-color: #4a4a4a;
+  border-color: #6a6a6a;
+  transform: translateY(-2px);
+}
+
+.example-buttons button:active {
+  transform: translateY(0);
+}
+
+.example-buttons button.random-button {
+  border-color: #9c27b0;
+}
+
+.example-buttons button.random-button:hover {
+  border-color: #ba68c8;
+  background-color: #4a3a4a;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    padding: 20px 15px;
+  }
+
+  .title {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+
+  .control-panel {
+    padding: 20px;
+  }
+
+  .input-section {
+    flex-direction: column;
+  }
+
+  .interval-input {
+    min-width: 100%;
+  }
+
+  .apply-button {
+    width: 100%;
+  }
+
+  .speed-control {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .speed-control input[type="range"] {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .example-buttons button {
+    flex: 1 1 calc(50% - 5px);
+    min-width: calc(50% - 5px);
+  }
+}
