@@ -74,7 +74,7 @@ out/
 
 # Gatsby
 .cache/
-public/
+# public/  # 注释掉，React项目需要public目录
 
 # Debug
 npm-debug.log*
