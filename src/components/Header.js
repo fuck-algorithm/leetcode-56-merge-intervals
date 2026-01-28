@@ -1,7 +1,7 @@
 import React from 'react';
 import './Header.css';
 
-function Header({ language, setLanguage, speechEnabled, onSpeechToggle, speechSupported }) {
+function Header({ language, setLanguage, speechEnabled, onSpeechToggle, speechSupported, onVideoClick }) {
   return (
     <header className="header">
       <div className="header-left">
@@ -52,6 +52,16 @@ function Header({ language, setLanguage, speechEnabled, onSpeechToggle, speechSu
           <option value="en">English (英文)</option>
           <option value="zh">中文</option>
         </select>
+        <button 
+          className="video-demo-btn"
+          onClick={onVideoClick}
+          title={language === 'zh' ? '观看视频演示' : 'Watch Video Demo'}
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M8 5v14l11-7z"/>
+          </svg>
+          <span>{language === 'zh' ? '视频演示' : 'Video Demo'}</span>
+        </button>
         <a 
           href="https://github.com/fuck-algorithm/leetcode-56-merge-intervals" 
           className="github-icon"
